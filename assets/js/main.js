@@ -14,11 +14,16 @@ lista.sort();
 document.getElementById("surname").innerHTML = lista;
 
 var i = 0;
-while (i < lista.lenght && lista[i] !== cognome) {
+var trovato = false;
+while (i < lista.length && !trovato) {
 
   if (lista[i] == cognome) {
-  document.getElementById("posizione").innerHTML = "la posizione del nuovo elemento è: " + i;
+  trovato = true;
+  var  position = i + 1;
+  document.getElementById("posizione").innerHTML = "la posizione del nuovo elemento è: " + position;
+
   }
+
   i++;
 
 }

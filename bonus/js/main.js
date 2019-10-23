@@ -1,17 +1,33 @@
+//
+var listaUp = [];
 //creo una lista di cognomi non ordinata
 var lista =["Rossi","Perri","Anastasio","Madia","Talarico","Campisano"];
 //chiedo all'utente di inserire un cognome
 var cognome = prompt("Ciao inserisci un cognome");
-
-
+var cognomeUp = cognome.toUpperCase();
+// prova
+console.log(cognomeUp);
 //stampo la lista non ordinata
 document.getElementById("unordered").innerHTML = lista;
 
-//inserisco il cognome nella lista
-lista.push(cognome);
+//trasformo ogni cognome della lista in maiuscolo
+for (var i = 0; i < lista.length; i++) {
+  listaUp[i] = lista[i].toUpperCase();
+}
 
+
+//inserisco il cognome nella lista
+listaUp.push(cognomeUp);
+
+//ordino la lista
+listaUp.sort();
+
+//trasformo ogni cognome della lista in minuscolo
+for (var i = 0; i < listaUp.length; i++) {
+  lista[i] = listaUp[i].toLowerCase();
+}
+//console.log(lista);
 //stampo la lista ordinata
-lista.sort();
 document.getElementById("surname").innerHTML = lista;
 
 var i = 0;
